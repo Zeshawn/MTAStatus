@@ -30,9 +30,9 @@ ActiveRecord::Schema.define(version: 2019_01_23_223644) do
   create_table "tickets", force: :cascade do |t|
     t.float "price", default: 15.0
     t.integer "user_id"
+    t.integer "train_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "train_id"
     t.string "train_time"
   end
 
