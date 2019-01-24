@@ -12,9 +12,9 @@
 
 <%= form_for @ticket do |f| %>
   <%= f.label "Customer" %>
-  <%= f.collection_select :user_id, User.all, :id, :first_name %><br>
+  <%= f.collection_select :user_id, @users, :id, :first_name %><br>
   <%= f.label "Train Line" %>
-  <%= f.collection_select :train_id, Train.all, :id, :line %><br>
+  <%= f.collection_select :train_id, @trains, :id, :line %><br>
   <%= f.time_select :train_time, default: {hour: 12, min: 0} %> <br>
   <%= f.submit %>
 <% end %>

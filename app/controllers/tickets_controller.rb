@@ -5,6 +5,8 @@ class TicketsController < ApplicationController
   end
 
   def new
+    @trains = Train.all
+    @users = User.all
     @ticket = Ticket.new
 
   end
