@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   resources :tickets
   resources :users
   #resources :first_names
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get '/login', to: "sessions#login", as: "login"
+
+  post '/sessions', to: "sessions#create"
 end
