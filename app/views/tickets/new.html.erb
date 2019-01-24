@@ -1,11 +1,24 @@
+<!DOCTYPE>
+<html>
+  <head>
 
- <%= @ticket.price %>
+  </head>
+  <body>
+    <div class = "container">
+      <h1 class= "text-center">Purchase a Ticket</h1>
+  <h2>
+    <small class= "text-muted">Ticket Price: </small>$<%= @ticket.price.to_i %>
+ </h2>
 
 <%= form_for @ticket do |f| %>
-  <%= f.label :user_id %>
-  <%= f.number_field :user_id %>
-  <%= f.label :train_id %>
-  <%= f.number_field :train_id %>
-  <%= f.time_select :train_time, default: {hour: 12, min: 0} %>
+  <%= f.label "Customer" %>
+  <%= f.collection_select :user_id, User.all, :id, :first_name %><br>
+  <%= f.label "Train Line" %>
+  <%= f.collection_select :train_id, Train.all, :id, :line %><br>
+  <%= f.time_select :train_time, default: {hour: 12, min: 0} %> <br>
   <%= f.submit %>
 <% end %>
+
+</div>
+</body>
+</html>

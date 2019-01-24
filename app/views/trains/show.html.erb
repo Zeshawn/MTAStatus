@@ -1,16 +1,36 @@
+<!DOCTYPE>
+<html>
+
+<head>
+
+</head>
+<body>
+  <div class = "container">
+    <div class = "text-center">
 <h1>Here is the Train Info</h1>
+  </div>
 
-<% @train.statuses.each do |s| %>
-  <p><%=  s.on_time %></p>
+<h3>Status:
+  <% @train.statuses.each do |s| %>
+  <% if s.on_time == false %>
+  <%= "Trains delayed" %>
+  <% else %>
+    <%= "Train's on time" %>
+    <% end %>
   <% end %>
+</h3>
 
 
-
-<p> <%= @train.line %> </p>
+<h4> Train Line: <small class ="text-muted"> <%= @train.line %></small> </h4>
 
 
 <% @train.stations.each do |s| %>
 
-<p> <%= s.name %> </p>
-<p> <%= s.address %> </p>
+<h4> Station:<small class ="text-muted"> <%= s.name %> </h4>
+<h4> Station Address: <small class ="text-muted"><%= s.address %></h4>
  <% end %>
+
+ <%= link_to '<button type="button" class="btn btn-info">Buy Ticket</button>'.html_safe, new_ticket_path %>
+ </div>
+ </body>
+</html>
