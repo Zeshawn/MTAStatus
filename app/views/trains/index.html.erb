@@ -1,0 +1,5 @@
+<h1>Here are all of the trains</h1>
+
+<% @trains.each do |t| %>
+<%= link_to t.line, t %>
+<% end %>

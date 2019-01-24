@@ -1,0 +1,10 @@
+<h1>Here are all of your tickets</h1>
+
+  <h2> <%="Hi #{@user.first_name}"%></h2>
+
+<% @user.tickets.each do |t| %>
+<%=  t.price %>
+<%= link_to t.train.line, train_path %>
+<% end %>
+
+<%= link_to "Buy a train ticket!", trains_path %>

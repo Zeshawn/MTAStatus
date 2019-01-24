@@ -1,0 +1,16 @@
+<h1>Here is the Train Info</h1>
+
+<% @train.statuses.each do |s| %>
+  <p><%=  s.on_time %></p>
+  <% end %>
+
+
+
+<p> <%= @train.line %> </p>
+
+
+<% @train.stations.each do |s| %>
+
+<p> <%= s.name %> </p>
+<p> <%= s.address %> </p>
+ <% end %>

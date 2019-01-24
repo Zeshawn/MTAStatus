@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  train_id: MyString
+  ticket_id: MyString
+  time_of_train: 2019-01-22 11:16:47
+
+two:
+  train_id: MyString
+  ticket_id: MyString
+  time_of_train: 2019-01-22 11:16:47
