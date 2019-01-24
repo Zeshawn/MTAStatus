@@ -1,5 +1,11 @@
-<h1>Here are all of the trains</h1>
+<div class= "text-center">
+<h1>All Train Lines</h1>
+</div>
 
+<div class= "row">
 <% @trains.each do |t| %>
+<div class= "col-lg-3">
 <%= link_to t.line, t %>
+</div>
 <% end %>
+</div>

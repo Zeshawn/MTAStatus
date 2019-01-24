@@ -1,10 +1,22 @@
-<h1>Here are all of your tickets</h1>
+<!DOCTYPE HTML>
+  <head>
+    <%= stylesheet_link_tag "users" %>
+  </head>
 
-  <h2> <%="Hi #{@user.first_name}"%></h2>
+  <body>
+      <div class= "container">
+        <h2 class="display-2">
+        <small class="text-muted"> Start your journey</small> <%="#{@user.first_name}"%>
+          </h2>
 
-<% @user.tickets.each do |t| %>
-<%=  t.price %>
-<%= link_to t.train.line, train_path %>
-<% end %>
+      <% @user.tickets.each do |t| %>
+        <h4> Price: $<%=  t.price %></h4>
+        <h5>Train Line: <%= link_to t.train.line, train_path %></h5>
+      <% end %>
 
-<%= link_to "Buy a train ticket!", trains_path %>
+      <%= link_to '<button type="button" class="btn btn-info">Check Trains</button>'.html_safe, trains_path %>
+
+      </div> <!------------- end container ---------------->
+  </body>
+
+</html>
