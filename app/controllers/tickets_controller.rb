@@ -16,6 +16,9 @@ class TicketsController < ApplicationController
     redirect_to @user
   end
 
+  def destroy
+    byebug
+  end
 
   private
 

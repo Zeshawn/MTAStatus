@@ -12,13 +12,19 @@
       <% @user.tickets.each do |t| %>
         <h4> Price: $<%=  t.price %></h4>
         <h5>Train Line: <%= link_to t.train.line, train_path %></h5>
+        <%=  link_to '<button type="button" class="btn btn-danger">Delete Ticket</button>'.html_safe, t , method: :delete, data: { confirm: 'Are you sure you want to delete your profile?' } %>
+
       <% end %>
+
+
 
       <%= link_to '<button type="button" class="btn btn-info">Check Trains</button>'.html_safe, trains_path %>
 
       <%= link_to '<button type="button" class="btn btn-info">Update Profile</button>'.html_safe, edit_user_path %>
 
       <%=  link_to '<button type="button" class="btn btn-danger">Delete Profile</button>'.html_safe, @user, method: :delete, data: { confirm: 'Are you sure you want to delete your profile?' } %>
+
+
       </div> <!------------- end container ---------------->
   </body>
 
