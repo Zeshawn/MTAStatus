@@ -1,4 +1,6 @@
 
+ <%= @ticket.price %>
+
 <%= form_for @ticket do |f| %>
   <%= f.label :user_id %>
   <%= f.number_field :user_id %>
@@ -6,5 +8,4 @@
   <%= f.number_field :train_id %>
   <%= f.time_select :train_time, default: {hour: 12, min: 0} %>
   <%= f.submit %>
-
 <% end %>
