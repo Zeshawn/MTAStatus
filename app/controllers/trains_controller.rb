@@ -5,7 +5,9 @@ def index
 end
 
 def show
+
   @train = Train.find(params[:id])
+  @stations = @train.stations 
 end
 
 end

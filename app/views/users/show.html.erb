@@ -6,7 +6,7 @@
   <body>
       <div class= "container">
         <h2 class="display-2">
-        <small class="text-muted"> Start your journey</small> <%="#{@user.first_name}"%>
+        <small class="text-muted"> Start your journey</small> <%="#{@user.first_name} #{@user.last_name}"%>
           </h2>
 
       <% @user.tickets.each do |t| %>
@@ -16,6 +16,9 @@
 
       <%= link_to '<button type="button" class="btn btn-info">Check Trains</button>'.html_safe, trains_path %>
 
+      <%= link_to '<button type="button" class="btn btn-info">Update Profile</button>'.html_safe, edit_user_path %>
+
+      <%=  link_to '<button type="button" class="btn btn-danger">Delete Profile</button>'.html_safe, @user, method: :delete, data: { confirm: 'Are you sure you want to delete your profile?' } %>
       </div> <!------------- end container ---------------->
   </body>
 

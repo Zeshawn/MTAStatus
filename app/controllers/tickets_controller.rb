@@ -5,11 +5,17 @@ class TicketsController < ApplicationController
   end
 
   def new
+    @trains = Train.all
+    @users = User.all
     @ticket = Ticket.new
+
   end
 
   def create
+    #byebug
+    @user = User.find(params[:ticket][:user_id])
     @ticket = Ticket.create(ticket_params)
+    redirect_to @user
   end
 
 
