@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+
+<head>
+  <%= stylesheet_link_tag "stations" %>
+</head>
+
+<body>
+    <div class= "container">
+      <h2 class="display-2">
+      <small class="text-muted">Check out</small><%= "#{@station.name}" %>
+      <h2>
+
+
+
+
+<%= @station.address %>
+
+<% @station.trains.each do |train| %>
+
+<%= link_to train.line, train_path(train.id) %>
+
+<% end %>
+
+</div> <!------------- end container ---------------->
+</body>
+
+</html>
