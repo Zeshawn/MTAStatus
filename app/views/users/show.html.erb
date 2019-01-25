@@ -4,27 +4,78 @@
   </head>
 
   <body>
-      <div class= "container">
-        <h2 class="display-2">
-        <small class="text-muted"> Start your journey</small> <%="#{@user.first_name} #{@user.last_name}"%>
-          </h2>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">MTAStatus</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+      </div>
+    </div>
+    </nav>
 
+    <!------------------------ end navbar -------------------------->
+
+    <div class= "container">
+
+      <div class = "row">
+
+        <div class = "col-sm-6 ticket-column">
+        <h2 class = "display-4">
+        <small class="text-muted"> Welcome</small><br></h2>
+        <h2 class="display-3 person-name"><%="#{@user.first_name} #{@user.last_name}"%></h2>
+
+        <h3> Your Tickets </h3>
       <% @user.tickets.each do |t| %>
-        <h4> Price: $<%=  t.price %></h4>
-        <h5>Train Line: <%= link_to t.train.line, train_path %></h5>
-        <%=  link_to '<button type="button" class="btn btn-danger">Delete Ticket</button>'.html_safe, t , method: :delete, data: { confirm: 'Are you sure you want to delete your profile?' } %>
-
+      <div class = "row">
+        <div class = "col-sm-6">
+          <h4> Price: $<%=  t.price %></h4>
+          <h5>Train Line: <%= link_to t.train.line, train_path %></h5>
+        </div><!---- end column --->
+          <div class = "col-sm-6 ticket-delete-btn">
+            <%=  link_to '<button type="button" class="btn-sm btn-outline-danger">Delete Ticket</button>'.html_safe, t, method: :delete, data: { confirm: 'Are you sure you want to remove this ticket?'} %>
+          </div>
+        </div> <!----- end row ----->
       <% end %>
+      </div>  <!------------- end of ticket-column -------------------->
 
+      <!---------------------- start of button columns ----------------------->
 
+      <div class = "col-sm-6 button-column">
+        <div class = "row">
 
-      <%= link_to '<button type="button" class="btn btn-info">Check Trains</button>'.html_safe, trains_path %>
+            <div class = "col-sm-2">
+              </div>
+          <div class = "col-sm-4">
+      <%= link_to '<button type="button" class="btn btn-info check-trains-btn">Check Trains</button>'.html_safe, trains_path %>
+        </div> <!------------------ end check trains btn -------------->
+        <div class = "col-sm-4">
+      <%= link_to '<button type="button" class="btn btn-info update-profile-btn">Update Profile</button>'.html_safe, edit_user_path %>
+        </div> <!-------------------- end update profile btn --------------->
 
-      <%= link_to '<button type="button" class="btn btn-info">Update Profile</button>'.html_safe, edit_user_path %>
+        <div class = "col-sm-2">
+          </div>
+      </div><!-------- end row within button-column ----------->
 
-      <%=  link_to '<button type="button" class="btn btn-danger">Delete Profile</button>'.html_safe, @user, method: :delete, data: { confirm: 'Are you sure you want to delete your profile?' } %>
+      <div class = "row"> <!------------------ delete row --------------->
+        <div class = "col-sm-2">
+          </div>
 
+            <div class = "col-sm-4">
+            <%= link_to '<button type="button" class="btn btn-info update-success-btn find-station-btn">Find Station</button>'.html_safe, edit_user_path %>
+            </div>
 
+            <div class = "col-sm-4">
+            <%=  link_to '<button type="button" class="btn btn-danger delete-profile-btn">Delete Profile</button>'.html_safe, @user, method: :delete, data: { confirm: 'Are you sure you want to delete your profile?' } %>
+            </div>
+
+        <div class = col-sm-2>
+          </div>
+        </div><!----------------- end delete row ----------------->
+      </div>  <!---------------- end button-column ------------->
+      </div> <!-------------------- end row ----------------->
       </div> <!------------- end container ---------------->
   </body>
 

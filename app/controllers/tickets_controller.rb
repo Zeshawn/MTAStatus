@@ -17,7 +17,12 @@ class TicketsController < ApplicationController
   end
 
   def destroy
-    byebug
+    @ticket = Ticket.find(params[:id].to_i)
+    @user = User.find_by(id: @ticket.user_id)
+
+
+    @ticket.destroy
+    redirect_to @user
   end
 
   private
