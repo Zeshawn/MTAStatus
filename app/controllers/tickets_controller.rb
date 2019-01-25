@@ -6,12 +6,24 @@ class TicketsController < ApplicationController
 
   def new
     @ticket = Ticket.new
+
   end
 
   def create
+    #byebug
+    @user = User.find(params[:ticket][:user_id])
     @ticket = Ticket.create(ticket_params)
+    redirect_to @user
   end
 
+  def destroy
+    @ticket = Ticket.find(params[:id].to_i)
+    @user = User.find_by(id: @ticket.user_id)
+
+
+    @ticket.destroy
+    redirect_to @user
+  end
 
   private
 
