@@ -25,7 +25,13 @@
       <div class = "sign-up-block col-lg-6">
           <h1>Sign Up</h1>
 
-
+            <% if !!flash[:errors]%>
+              <ul>
+                <% flash[:errors].each do |e|%>
+                  <li><%= e %> </li>
+                  <% end %>
+                  </ul>
+                  <% end %>
           <%= form_for @user, :html => {:class => "form-horizontal center"} do |f| %>
             <div class="form-group">
             <%= f.label :first_name, class: "col-md-4 control-label" %>

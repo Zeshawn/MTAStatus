@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   get '/login', to: "sessions#login", as: "login"
 
   post '/sessions', to: "sessions#create"
+
+  post '/destroy', to: "sessions#destroy" 
 end
