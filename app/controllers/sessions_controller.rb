@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
   def login
+
   end
 
   def create
@@ -8,13 +9,23 @@ class SessionsController < ApplicationController
 
     if !!@user && @user.authenticate(params[:password])
 
-      session[:user_id] = @user.id
 
-      redirect_to user_path(@user)
+    session[:user_id] = @user.id
 
-    else
+    redirect_to user_path(@user)
 
-      redirect_to login_path
-    end
-  end
-end
+     else
+
+
+
+
+       #flash[:message] = "not authenticated!"
+       redirect_to login_path
+     end
+   end
+   end
+
+     #def destroy
+       #session.delete(:user_id)
+     #end
+

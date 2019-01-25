@@ -1,7 +1,10 @@
 
+<h1>All Stations!</h1>
+
 <% @stations.each do |station| %>
-<div class= "col-lg-3">
-<%= station.name %>
-<%= station.address %>
-</div>
+<ul>
+<li><%= link_to station.name, station_path(station.id)  %></li>
+
+</ul>
+
 <% end %>

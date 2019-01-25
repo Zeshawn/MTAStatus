@@ -67,9 +67,14 @@
             <%= link_to '<button type="button" class="btn btn-info update-success-btn find-station-btn">Find Station</button>'.html_safe, edit_user_path %>
             </div>
 
+
             <div class = "col-sm-4">
             <%=  link_to '<button type="button" class="btn btn-danger delete-profile-btn">Delete Profile</button>'.html_safe, @user, method: :delete, data: { confirm: 'Are you sure you want to delete your profile?' } %>
             </div>
+
+      <%= link_to '<button type="button" class="btn btn-info">Check Trains</button>'.html_safe, trains_path %>
+      <%= link_to '<button type="button" class="btn btn-info">Check Trains</button>'.html_safe, stations_path %>
+
 
         <div class = col-sm-2>
           </div>

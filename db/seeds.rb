@@ -15,22 +15,22 @@
     #t.string "name"
     #t.string "address"
 
-Station.create(name:"Grand Central Terminal" , address:"Midtown East
-89 E 42nd St")
-Station.create(name:"Penn Station" , address:"Midtown West
-393 7th Ave")
-Station.create(name:"Atlantic Avenue - Barclays Center Station" , address: "Boerum Hill
-Atlantic Ave & Flatbush Ave")
-Station.create(name:"Bayside LIRR Train Station" , address: "Bayside
-213TH St And 41st Ave")
-Station.create(name: "MTA - Canal Street Subway Station", address:"Canal St And Lafayette")
-Station.create(name: "Rector Street BMT Subway Station" , address: "Financial District
-Rector St")
-Station.create(name:"MTA - 34th Street Hudson Yards Subway Station" , address:"Hell's Kitchen
-34th St & Hudson Blvd")
-Station.create(name:"Tonnelle Avenue Light Rail Station" , address:"Tonnelle Ave 51st St")
-Station.create(name:"Jamaica LIRR Station" , address:"Jamaica")
-Station.create(name: "PATH Station - Hoboken", address:"Hudson Place And River Rd")
+#Station.create(name:"Grand Central Terminal" , address:"Midtown East
+#89 E 42nd St")
+#Station.create(name:"Penn Station" , address:"Midtown West
+#393 7th Ave")
+#Station.create(name:"Atlantic Avenue - Barclays Center Station" , address: "Boerum Hill
+#Atlantic Ave & Flatbush Ave")
+#Station.create(name:"Bayside LIRR Train Station" , address: "Bayside
+#213TH St And 41st Ave")
+#Station.create(name: "MTA - Canal Street Subway Station", address:"Canal St And Lafayette")
+#Station.create(name: "Rector Street BMT Subway Station" , address: "Financial District
+#Rector St")
+# Station.create(name:"MTA - 34th Street Hudson Yards Subway Station" , address:"Hell's Kitchen
+# 34th St & Hudson Blvd")
+# Station.create(name:"Tonnelle Avenue Light Rail Station" , address:"Tonnelle Ave 51st St")
+# Station.create(name:"Jamaica LIRR Station" , address:"Jamaica")
+# Station.create(name: "PATH Station - Hoboken", address:"Hudson Place And River Rd")
 
 #station_id 13-22
 
@@ -40,6 +40,7 @@ Station.create(name: "PATH Station - Hoboken", address:"Hudson Place And River R
     #  t.boolean "on_time"
     #  t.integer "station_id"
     #  t.integer "train_id"
+
 Status.create(on_time: true , station_id: 14, train_id: 22)
 Status.create(on_time: false, station_id: 17, train_id: 21)
 Status.create(on_time: false, station_id: 15, train_id: 30)
@@ -50,6 +51,7 @@ Status.create(on_time: true, station_id: 13, train_id: 28)
 Status.create(on_time: false, station_id: 20, train_id: 26)
 Status.create(on_time: true, station_id: 19, train_id: 27)
 Status.create(on_time: false, station_id: 22 , train_id: 29)
+
 
 
 
@@ -72,16 +74,16 @@ Status.create(on_time: false, station_id: 22 , train_id: 29)
 # create_table "trains", force: :cascade do |t|
   #t.string "line"
 
-  Train.create(line: "1 Line" )
-  Train.create(line: "R Line" )
-  Train.create(line: "Z Line" )
-  Train.create(line: "Q Line" )
-  Train.create(line: "3 Line" )
-  Train.create(line: "E Line" )
-  Train.create(line: "4 Line" )
-  Train.create(line: "W Line" )
-  Train.create(line: "B Line" )
-  Train.create(line: "7 Line" )
+  # Train.create(line: "1 Line" )
+  # Train.create(line: "R Line" )
+  # Train.create(line: "Z Line" )
+  # Train.create(line: "Q Line" )
+  # Train.create(line: "3 Line" )
+  # Train.create(line: "E Line" )
+  # Train.create(line: "4 Line" )
+  # Train.create(line: "W Line" )
+  # Train.create(line: "B Line" )
+  # Train.create(line: "7 Line" )
 
 
 #train_id 21-30
@@ -104,3 +106,4 @@ Status.create(on_time: false, station_id: 22 , train_id: 29)
     User.create(first_name: "Flat", last_name: "Iron", password_digest: "flatiron")
 
     #user_id 20-29
+
